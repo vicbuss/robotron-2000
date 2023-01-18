@@ -1,9 +1,9 @@
-const controle = document.querySelectorAll(".controle-ajuste");
+const controle = document.querySelectorAll("[data-controle]");
 
 controle.forEach((elemento) => {
     elemento.addEventListener ("click", (evento) => {
-        let operacao = evento.target.textContent;
-        let atributo = evento.target.parentElement.children[1];
+        let operacao = evento.target.dataset.controle;
+        let atributo = evento.target.parentElement.querySelector('[data-contador]');
         manipulaDados(operacao, atributo);
     });
 });
