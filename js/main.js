@@ -41,7 +41,7 @@ controle.forEach((elemento) => {
         manipulaDados(operacao, atributo);
         
         let peca = evento.target.dataset.peca;
-        atualizaEstatisticas(peca);
+        atualizaEstatisticas(peca, operacao);
     });
 });
 
@@ -53,9 +53,14 @@ function manipulaDados(operacao, atributo) {
     }
 }
 
-function atualizaEstatisticas(peca) {
+function atualizaEstatisticas(peca, operacao) {
 
     estatisticas.forEach((elemento) => {
-        elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatisticas];
+        if (operacao === "-") {
+            elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatisticas];    
+        } else {
+            elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatisticas];
+        }
+        
     });
 }
