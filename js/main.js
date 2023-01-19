@@ -1,3 +1,5 @@
+//Alteração de estatísticas do robô
+
 const controle = document.querySelectorAll("[data-controle]");
 const estatisticas = document.querySelectorAll("[data-estatisticas]");
 const pecas = {
@@ -54,13 +56,50 @@ function manipulaDados(operacao, atributo) {
 }
 
 function atualizaEstatisticas(peca, operacao) {
-
     estatisticas.forEach((elemento) => {
         if (operacao === "-") {
             elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatisticas];    
         } else {
             elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatisticas];
         }
-        
     });
 }
+
+//Alteração de cor do robô
+
+const botaoAlterarCor = document.querySelector("[data-mudar-cor]");
+const imagemRobo = document.getElementById("robotron");
+const cores = [
+
+    {"cor": "azul",
+    "src" : "img/robos/Robotron 2000 - Azul.png"},
+    
+    {"cor": "amarelo", 
+    "src" : "img/robos/Robotron 2000 - Amarelo.png"},
+    
+    {"cor": "branco", 
+    "src" : "img/robos/Robotron 2000 - Branco.png"},
+    
+    {"cor": "preto",
+    "src" : "img/robos/Robotron 2000 - Preto.png"},
+    
+    {"cor": "rosa",
+    "src" : "img/robos/Robotron 2000 - Rosa.png"},
+    
+    {"cor": "vermelho",
+    "src" : "img/robos/Robotron 2000 - Vermelho.png"}
+];
+
+let contadorCores = 0;
+const numeroDeCores = Object.keys(cores).length;
+
+botaoAlterarCor.onclick = () => {
+    if(contadorCores < numeroDeCores - 1) {
+        contadorCores++;
+    } else {
+        contadorCores = 0;
+    }
+    imagemRobo.src = cores[contadorCores].src;
+};
+
+
