@@ -91,12 +91,11 @@ const cores = [
 ];
 
 let contadorCores = 0;
-const numeroDeCores = Object.keys(cores).length;
+const numeroDeCores = cores.length;
 
 botaoAlterarCor.onclick = () => {
-    if(contadorCores < numeroDeCores - 1) {
-        contadorCores++;
-    } else {
+    contadorCores++;
+    if(contadorCores === numeroDeCores) {
         contadorCores = 0;
     }
     imagemRobo.src = cores[contadorCores].src;
