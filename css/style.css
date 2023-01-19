@@ -17,7 +17,7 @@ body {
     font-weight: 300;
 }
 
-body, input {
+body, input, .mudar-cor {
     font-family: 'Teko', sans-serif;
 }
 
@@ -146,6 +146,10 @@ main {
 .producao:hover {
     background: var(--main-preto);
     color: var(--main-branco)
+}
+
+.mudar-cor{
+    float: left !important;
 }
 
 
