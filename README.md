@@ -7,7 +7,7 @@ Projeto de estudo de manipulação do DOM com Javascript pela Alura.
 
 ## Deploy
 Projeto hospedado no Vercel:
-[Robotron](https://vercel.com/vicbuss/robotron/settings/domains/)
+[Robotron](https://robotron-vbuss.vercel.app/)
 
 
 
